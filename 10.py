@@ -1,7 +1,7 @@
 import math
 lb_pierwsze=[]
-
-def main():
+wynik=0
+def main(wynik):
     count = 3
 
     while True:
@@ -13,16 +13,13 @@ def main():
                 break
 
         if isprime:
-            lb_pierwsze.append(count)
-            print(count)
-        if lb_pierwsze[len(lb_pierwsze)-1] > 2000000:
-            break
+            if count <= 2000000:
+                wynik+=count
+                print(wynik,count)
+            else:
+                return wynik
+
         count += 1
 
-main()
-wynik = 0
-lb_pierwsze = lb_pierwsze.remove(len(lb_pierwsze)-2)
-print(lb_pierwsze)
-for i in lb_pierwsze:
-    wynik+=i
-print(wynik)
+main(wynik)
+print(wynik,"wynik")
